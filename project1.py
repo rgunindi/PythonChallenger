@@ -24,10 +24,17 @@ seperatedDataList=[]
 for i in projectList:
     seperatedData=i.split(',')
     seperatedDataList.append(seperatedData)
-    # print(seperatedData)
-dateList=[]
-for i in seperatedDataList:
-    seperatedDataList.sort(i[1])
 
-print(seperatedDataList)
-print(nTeamNumber)
+dateList=[]
+totalBudget=0
+for i in seperatedDataList:
+    totalBudget=totalBudget+int(i[3])
+    for j in seperatedDataList:
+        if j[1]<i[1]:
+            
+            dateList.append(j)
+seperatedDataList.sort()
+print(f"Total budget: {totalBudget}")
+for i in seperatedDataList:
+    print(f"{i[0]},{i[1]},{i[2]},{i[3]},{i[4]}")
+
