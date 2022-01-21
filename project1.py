@@ -25,14 +25,10 @@ for i in projectList:
     seperatedData=i.split(',')
     seperatedDataList.append(seperatedData)
 
-dateList=[]
 totalBudget=0
 for i in seperatedDataList:
     totalBudget=totalBudget+int(i[3])
-    for j in seperatedDataList:
-        if j[1]<i[1]:
-            
-            dateList.append(j)
+   
 seperatedDataList.sort()
 print(f"Total budget: {totalBudget}")
 for i in seperatedDataList:
